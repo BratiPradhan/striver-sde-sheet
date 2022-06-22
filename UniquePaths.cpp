@@ -21,3 +21,26 @@ int uniquePaths(int m, int n) {
     int ans = countPaths(i, j, m, n, dp);
     return ans;
 }
+
+
+
+
+// MATH - COMBINATION
+// TIme complexity - o(min(m, n))
+// Space complexity = O(1)
+
+
+#include <bits/stdc++.h> 
+int uniquePaths(int m, int n) {
+	int N = m + n -2;
+    int r = min(m,n);
+    
+    double res = 1;
+    
+    for(int i = 1; i < r; i++, N--)
+    {
+        res = res * N /i;
+    }
+    
+    return (int)res;
+}
